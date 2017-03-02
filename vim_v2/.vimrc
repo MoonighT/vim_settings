@@ -35,6 +35,8 @@ set nocompatible
 " vim 自身命令行模式智能补全
 set wildmenu
 
+set scrolloff=5
+
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
 
 " >>>>
@@ -65,7 +67,6 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-scripts/DrawIt'
 Plugin 'SirVer/ultisnips'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'derekwyatt/vim-protodef'
 Plugin 'scrooloose/nerdtree'
 Plugin 'fholgado/minibufexpl.vim'
@@ -74,11 +75,10 @@ Plugin 'sjl/gundo.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'lilydjwg/fcitx.vim'
-
+Plugin 'auto-pairs-gentle'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
-
 Plugin 'fatih/vim-go'
 
 " 插件列表结束
@@ -224,9 +224,9 @@ let g:tagbar_type_go = {
     \ 'ctagsargs' : '-sort -silent'
 \ }
 
-nnoremap <leader>jc :YcmCompleter GoToDeclaration<CR>
+" nnoremap <leader>jc :YcmCompleter GoToDeclaration<CR>
 " 只能是 #include 或已打开的文件
-nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
+" nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
 
 nnoremap <Leader>sp :CtrlSF<CR>
 
@@ -282,8 +282,10 @@ let NERDTreeAutoDeleteBuffer=1
 " 显示/隐藏 MiniBufExplorer 窗口
 map <Leader>bl :MBEToggle<cr>
 " buffer 切换快捷键
-map <C-Tab> :MBEbn<cr>
-map <C-S-Tab> :MBEbp<cr>
+" map <C-Tab> :MBEbn<cr>
+" map <C-S-Tab> :MBEbp<cr>
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplTabWrap = 1
 
 " 设置环境保存项
 set sessionoptions="blank,buffers,globals,localoptions,tabpages,sesdir,folds,help,options,resize,winpos,winsize"
