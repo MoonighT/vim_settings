@@ -66,7 +66,6 @@ Plugin 'dyng/ctrlsf.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-scripts/DrawIt'
-Plugin 'SirVer/ultisnips'
 Plugin 'derekwyatt/vim-protodef'
 Plugin 'scrooloose/nerdtree'
 Plugin 'fholgado/minibufexpl.vim'
@@ -260,10 +259,6 @@ nnoremap <Leader>rc :call Replace(1, 0, input('Replace '.expand('<cword>').' wit
 " 确认、整词
 nnoremap <Leader>rcw :call Replace(1, 1, input('Replace '.expand('<cword>').' with: '))<CR>
 nnoremap <Leader>rwc :call Replace(1, 1, input('Replace '.expand('<cword>').' with: '))<CR>
-
-let g:UltiSnipsExpandTrigger="<leader><tab>"
-let g:UltiSnipsJumpForwardTrigger="<leader><tab>"
-let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>"
 
 " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
 nmap <Leader>fl :NERDTreeToggle<CR>
